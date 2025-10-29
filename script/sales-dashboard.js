@@ -26,10 +26,12 @@ async function loadData() {
     return;
   }
 
-  // المدير يشوف الكل، اليوزر يشوف نفسه فقط
-  if (currentUser !== "Mohand") {
-    data = data.filter((row) => row.user_id === currentUser);
-  }
+  // المدير يشوف الكل، اليوزر يشوف نفسه فقط// السماح لثلاثة أشخاص فقط بمشاهدة كل البيانات
+const admins = ["Mohand", "Mr.Beshoy", "Mr.Mahmoud"];
+
+if (!admins.includes(currentUser)) {
+  data = data.filter((row) => row.user_id === currentUser);
+}
 
   const tbody = document.querySelector("#dailyTable tbody");
   tbody.innerHTML = data
@@ -49,3 +51,4 @@ async function loadData() {
     )
     .join("");
 }
+
