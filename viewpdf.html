@@ -12,7 +12,7 @@
     .actions{display:flex;gap:8px;align-items:center;justify-content:flex-end}
     .actions a, .actions button{background:#6a1b9a;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;border:none;cursor:pointer}
     .actions a[disabled], .actions button[disabled]{background:#ccc;cursor:not-allowed}
-    object{width:100%;height:calc(100vh - 140px);border:1px solid #ddd;background:#fff}
+    embed{width:100%;height:calc(100vh - 140px);border:1px solid #ddd;background:#fff}
   </style>
 </head>
 <body>
@@ -29,9 +29,7 @@
 
     <div id="viewerWrap">
       <p id="missing" style="display:none">لم يتم تحديد ملف للعرض.</p>
-      <object id="pdfViewer" data="" type="application/pdf">
-        <p>ملف PDF غير مدعوم في هذا المتصفح.</p>
-      </object>
+      <embed id="pdfViewer" type="application/pdf">
     </div>
   </div>
 
@@ -52,7 +50,7 @@
       printBtn.disabled = true;
     } else {
       const url = decodeURIComponent(src);
-      viewer.data = url;
+      viewer.src = url;
 
       // زر الطباعة
       printBtn.addEventListener('click', () => {
