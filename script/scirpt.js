@@ -5,7 +5,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         "mahmoud.kader": "Mr.Mahmoud",
         "mohand.hassan": "Mohand",
         "julia.samy": "Julia",
-        "mohamed.sayed": "Mohamed"
+        "mohamed.sayed": "Mohamed",
+        "beshoy.adel": "Mr.Beshoy"
     };
 
     const password = "Abcd12345@";
@@ -19,3 +20,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('اسم المستخدم أو كلمة المرور غير صحيحة');
     }
 });
+
