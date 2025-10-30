@@ -25,7 +25,8 @@
 
       <label>We Pay:</label><input type="number" id="wePay" required>
       <label>Port in:</label><input type="number" id="mnp" required>
-      <label>ADSL:</label><input type="number" id="adsl" required>
+      <label for="adsl">ADSL:</label><input type="number" id="adsl" requiredmin="1" onchange="generatePackageFields(this.value)">
+      <div id="packageContainer"></div>
       <label>Fixed:</label><input type="number" id="fixed" required>
       <label>Egyption:</label><input type="number" id="egyption" required>
       <label>Foreign:</label><input type="number" id="foreign" required>
@@ -35,4 +36,5 @@
   </div>
 </body>
 </html>
+
 
