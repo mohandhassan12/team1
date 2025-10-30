@@ -70,7 +70,30 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     lines: Number(document.getElementById("lines").value),
     we_pay: Number(document.getElementById("wePay").value),
     data: Number(document.getElementById("mnp").value),
-    adsl: Number(document.getElementById("adsl").value),
+  // إنشاء قوائم باقات ADSL حسب العدد المُدخل
+window.generateAdslFields = function (num) {
+  const container = document.getElementById("adslContainer");
+  container.innerHTML = "";
+  for (let i = 1; i <= num; i++) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <label>باقة ADSL رقم ${i}:</label>
+      <select id="adslPackage${i}" required>
+        <option value="">اختر الباقة</option>
+        <option value="super 140g">Super 140G</option>
+        <option value="super 200g">Super 200G</option>
+        <option value="super 250g">Super 250G</option>
+        <option value="super up">Super Up</option>
+      </select>`;
+    container.appendChild(div);
+  }
+};
+
+// عند تغيير عدد خطوط ADSL
+document.getElementById("adsl").addEventListener("input", (e) => {
+  const num = Number(e.target.value);
+  if (num > 0) generateAdslFields(num);
+});
     fixed: Number(document.getElementById("fixed").value),
     egyption: Number(document.getElementById("egyption").value),
     foreign_count: Number(document.getElementById("foreign").value),
@@ -87,4 +110,5 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     window.location.href = "sales-dashboard.html";
   }
 });
+
 
