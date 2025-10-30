@@ -22,10 +22,67 @@ window.generatePackageFields = function (num) {
       <label>الباقة للخط ${i}:</label>
       <select id="package${i}" required>
         <option value="">اختر الباقة</option>
-        <option value="Super kix 25">Super kix 25</option>
-        <option value="Super kix 32">Super kix 32</option>
-        <option value="Super kix 45">Super kix 45</option>
-      </select>`;
+           <option value="Super kix 25">Super kix 25</option>
+
+                    <option value="Super kix 32">Super kix 32</option>
+
+                    <option value="Super kix 45">Super kix 45</option>
+
+                    <option value="Super kix 60">Super kix 60</option>
+
+                    <option value="Super kix 85">Super kix 85</option>
+
+                    <option value="Super kix 105">Super kix 105</option>
+
+                    <option value="Super kix 130">Super kix 130</option>
+
+                    <option value="New control Tazbeet 40">New control Tazbeet 40</option>
+
+                    <option value="New control Tazbeet 50">New control Tazbeet 50</option>
+
+                    <option value="New control Tazbeet 90">New control Tazbeet 90</option>
+
+                    <option value="New control Tazbeet 145">New control Tazbeet 145</option>
+
+                    <option value="We club 32">We club 32</option>
+
+                    <option value="We club 50">We club 50</option>
+
+                    <option value="We club 85">We club 85</option>
+
+                    <option value="We club 130">We club 130</option>
+
+                    <option value="We mix">We mix</option>
+
+                    <option value="Data">Data Line</option>
+
+                    <option value="We gold 260">We gold 260</option>
+
+                    <option value="We gold 525">We gold 525</option>
+
+                    <option value="We gold 775">We gold 775</option>
+
+                    <option value="We gold 1050">We gold 1050</option>
+
+                    <option value="We gold 1300">We gold 1300</option>
+
+                    <option value="We gold 2000">We gold 2000</option>
+
+                    <option value="We gold st 260">We gold st 260</option>
+
+                    <option value="We gold st 525">We gold st 525</option>
+
+                    <option value="We gold st 775">We gold st 775</option>
+
+                    <option value="We gold st 1050">We gold st 1050</option>
+
+                    <option value="We gold st 1300">We gold st 1300</option>
+
+                    <option value="We gold st 2000">We gold st 2000</option>
+
+                    <option value="We Air">We Air</option>
+
+                </select>`;
     container.appendChild(div);
   }
 };
@@ -93,4 +150,5 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     window.location.href = "sales-dashboard.html";
   }
 });
+
 
