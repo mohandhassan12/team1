@@ -49,7 +49,7 @@ function generatePackageFields(num) {
       </select>`;
     container.appendChild(div);
   }
-}
+};
 
 // دالة إنشاء باقات ADSL
 function generateAdslFields(num) {
@@ -68,7 +68,7 @@ function generateAdslFields(num) {
       </select>`;
     container.appendChild(div);
   }
-}
+};
 
 // تشغيل عند إدخال القيم
 document.getElementById("lines").addEventListener("input", e => {
@@ -322,6 +322,7 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     window.location.href = "sales-dashboard.html";
   }
 });
+
 
 
 
