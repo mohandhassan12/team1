@@ -36,26 +36,21 @@ window.generatePackageFields = function (num) {
                         <option value="We club 50">We club 50</option>
                         <option value="We club 85">We club 85</option>
                         <option value="We club 130">We club 130</option>
-                        <option value="We mix 215">We mix 215</option>
-                        <option value="We mix 310">We mix 310</option>
-                        <option value="Nitro 13">Nitro 13</option>
-                        <option value="Nitro 25">Nitro 25</option>
-                        <option value="Nitro 50">Nitro 50</option>
-                        <option value="Nitro 90">Nitro 90</option>
-                        <option value="Nitro 130">Nitro 130</option>
-                        <option value="Nitro 260">Nitro 260</option>
-                        <option value="Nitro 585">Nitro 585</option>
+                        <option value="We mix">We mix</option>
+                        <option value="Data">Data Line</option>
                         <option value="We gold 260">We gold 260</option>
                         <option value="We gold 525">We gold 525</option>
                         <option value="We gold 775">We gold 775</option>
                         <option value="We gold 1050">We gold 1050</option>
                         <option value="We gold 1300">We gold 1300</option>
                         <option value="We gold 2000">We gold 2000</option>
-                        <option value="We Air 260">We Air 260</option>
-                        <option value="We air 400">We air 400</option>
-                        <option value="We air 600">We air 600</option>
-                        <option value="We air 900">We air 900</option>
-                        <option value="We air 1100">We air 1100</option>
+                        <option value="We gold st 260">We gold st 260</option>
+                        <option value="We gold st 525">We gold st 525</option>
+                        <option value="We gold st 775">We gold st 775</option>
+                        <option value="We gold st 1050">We gold st 1050</option>
+                        <option value="We gold st 1300">We gold st 1300</option>
+                        <option value="We gold st 2000">We gold st 2000</option>
+                        <option value="We Air">We Air</option>
                     </select>`;
     container.appendChild(div);
   }
@@ -74,7 +69,7 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     date: new Date().toISOString().split("T")[0],
     lines: Number(document.getElementById("lines").value),
     we_pay: Number(document.getElementById("wePay").value),
-    data: Number(document.getElementById("data").value),
+    data: Number(document.getElementById("mnp").value),
     adsl: Number(document.getElementById("adsl").value),
     fixed: Number(document.getElementById("fixed").value),
     egyption: Number(document.getElementById("egyption").value),
@@ -92,3 +87,4 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
     window.location.href = "sales-dashboard.html";
   }
 });
+
