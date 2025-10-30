@@ -1,7 +1,9 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const SUPABASE_URL = "https://zbmpbhunlefkweugesip.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpibXBiaHVubGVma3dldWdlc2lwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2NjYzNzAsImV4cCI6MjA3NzI0MjM3MH0.u9qSSvF7Ets039VIOv8AoPSDYFFJp5wytB3TLoydK9c";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpibXBiaHVubGVma3dldWdlc2lwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2NjYzNzAsImV4cCI6MjA3NzI0MjM3MH0.u9qSSvF7Ets039VIOv8AoPSDYFFJp5wytB3TLoydK9c";
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const currentUser = localStorage.getItem("currentUser");
@@ -12,7 +14,7 @@ if (!currentUser) {
 
 document.getElementById("username").textContent = currentUser;
 
-// دالة إنشاء باقات الخطوط
+// إنشاء باقات الخطوط
 function generatePackageFields(num) {
   const container = document.getElementById("packageContainer");
   container.innerHTML = "";
@@ -45,13 +47,19 @@ function generatePackageFields(num) {
         <option value="We gold 1050">We gold 1050</option>
         <option value="We gold 1300">We gold 1300</option>
         <option value="We gold 2000">We gold 2000</option>
+        <option value="we gold st 260">We gold st 260</option>
+        <option value="we gold st 525">We gold st 525</option>
+        <option value="we gold st 775">We gold st 775</option>
+        <option value="we gold st 1050">We gold st 1050</option>
+        <option value="we gold st 1300">We gold st 1300</option>
+        <option value="we gold st 2000">We gold st 2000</option>
         <option value="We Air">We Air</option>
       </select>`;
     container.appendChild(div);
   }
 };
 
-// دالة إنشاء باقات ADSL
+// إنشاء باقات ADSL
 function generateAdslFields(num) {
   const container = document.getElementById("adslContainer");
   container.innerHTML = "";
@@ -71,24 +79,29 @@ function generateAdslFields(num) {
 };
 
 // تشغيل عند إدخال القيم
-document.getElementById("lines").addEventListener("input", e => {
+document.getElementById("lines").addEventListener("input", (e) => {
   const num = Number(e.target.value);
   if (num > 0) generatePackageFields(num);
   else document.getElementById("packageContainer").innerHTML = "";
 });
 
-document.getElementById("adsl").addEventListener("input", e => {
+document.getElementById("adsl").addEventListener("input", (e) => {
   const num = Number(e.target.value);
   if (num > 0) generateAdslFields(num);
   else document.getElementById("adslContainer").innerHTML = "";
 });
 
-// الحفظ
-document.getElementById("dataEntryForm").addEventListener("submit", async e => {
+// حفظ البيانات
+document.getElementById("dataEntryForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const packages = Array.from(document.querySelectorAll("select[id^='package']")).map(el => el.value);
-  const adslPackages = Array.from(document.querySelectorAll("select[id^='adslPackage']")).map(el => el.value);
+  const packages = Array.from(
+    document.querySelectorAll("select[id^='package']")
+  ).map((el) => el.value);
+
+  const adslPackages = Array.from(
+    document.querySelectorAll("select[id^='adslPackage']")
+  ).map((el) => el.value);
 
   const entry = {
     user_id: currentUser,
@@ -112,25 +125,4 @@ document.getElementById("dataEntryForm").addEventListener("submit", async e => {
     alert("تم الحفظ بنجاح!");
     window.location.href = "sales-dashboard.html";
   }
-});                  date: new Date().toISOString().split("T")[0],
-        lines: Number(document.getElementById("lines").value),
-        we_pay: Number(document.getElementById("wePay").value),
-        data: Number(document.getElementById("mnp").value),
-        adsl: Number(document.getElementById("adsl").value),
-        fixed: Number(document.getElementById("fixed").value),
-        egyption: Number(document.getElementById("egyption").value),
-        foreign_count: Number(document.getElementById("foreign").value),
-        packages,
-        adsl_packages: adslPackages,
-      };
-
-      const { error } = await supabase.from("sales_data").insert([entry]);
-      if (error) {
-        console.error(error);
-        alert("حدث خطأ أثناء الحفظ!");
-      } else {
-        alert("تم الحفظ بنجاح!");
-        window.location.href = "sales-dashboard.html";
-      }
-    });
-});                            
+});
