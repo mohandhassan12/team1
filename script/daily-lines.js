@@ -118,11 +118,12 @@ document.getElementById("dataEntryForm").addEventListener("submit", async (e) =>
 
   const { error } = await supabase.from("sales_data").insert([entry]);
   if (error) {
-    console.error(error);
-    alert("حدث خطأ أثناء الحفظ!");
+    console.error(error.message);
+alert("حدث خطأ: " + error.message);
   } else {
     alert("تم الحفظ بنجاح!");
     window.location.href = "sales-dashboard.html";
   }
 });
+
 
