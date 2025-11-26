@@ -7,7 +7,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         "julia.samy": "Julia",
         "mohamed.sayed": "Mohamed",
         "beshoy.adel": "Mr.Beshoy",
-        "mohamed.nahas": "Mr.Nahas" // النحاس
+        "mohamed.nahas": "Mr.Nahas",
+        "mohammed.alsisi": "Mr:Muhammed Al-Sisi"
+        
     };
 
     // كلمات المرور مخصصة لكل مستخدم
@@ -17,7 +19,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         "julia.samy": "Abcd12345@",
         "mohamed.sayed": "Abcd12345@",
         "beshoy.adel": "Abcd12345@",
-        "mohamed.nahas": "Abc123@"     // كلمة مرور مختلفة للنحاس
+        "mohamed.nahas": "Abc123@",  
+        "mohammed.alsisi":"Abc123@"
     };
 
     const username = document.getElementById('username').value.trim();
@@ -30,3 +33,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('اسم المستخدم أو كلمة المرور غير صحيحة');
     }
 });
+
