@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         "julia.samy": "Julia",
         "mohamed.sayed": "Mohamed",
         "beshoy.adel": "Mr.Beshoy",
-        "mohamed.nahas": "Mr.Nahas",
+        "basmala.ahmed": "EL-Zeftaa🥱",
         "mohammed.alsisi": "Mr:Muhammed Al-Sisi"
         
     };
@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         "julia.samy": "Abcd12345@",
         "mohamed.sayed": "Abcd12345@",
         "beshoy.adel": "Abcd12345@",
-        "mohamed.nahas": "Abc123@",  
+        "basmala.ahmed": "Abc12345@",  
         "mohammed.alsisi":"Abc123@"
     };
 
@@ -33,4 +33,5 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('اسم المستخدم أو كلمة المرور غير صحيحة');
     }
 });
+
 
